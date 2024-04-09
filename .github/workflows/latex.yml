@@ -20,7 +20,7 @@ jobs:
           path: ~/.local/texlive  # Cache Latex installation directory
           key: ${{ runner.os }}-texlive-${{ hashFiles('**/package-list.txt') }}  # Cache key with hash
           restore-keys: |   # Fallback cache keys
-            ${{ runner.os }}-texlive-  # Match any texlive version
+            ${{ runner.os }}-texlive-
 
       - name: Install Dependencies (if cache miss)
         run: sudo apt update && sudo apt install -y texlive-full  # Only install if cache miss
