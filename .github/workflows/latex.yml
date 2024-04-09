@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v4  # Uploads generated PDF as artifact
         with:
           name: resume.pdf
-          path: ./resume.pdf
+          path: main.pdf
