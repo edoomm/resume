@@ -27,7 +27,7 @@ jobs:
             else
               sudo apt update && sudo apt install --yes texlive-full
               mkdir -p ~/texlive
-              sudo dpkg -L texlive | while IFS= read -r f; do if test -f $f; then echo $f; fi; done | xargs cp --parents --target-directory ~/texlive/
+              sudo dpkg -L pdflatex | while IFS= read -r f; do if test -f $f; then echo $f; fi; done | xargs cp --parents --target-directory ~/texlive/
             fi
 
       # - name: Install Dependencies (if cache miss)
