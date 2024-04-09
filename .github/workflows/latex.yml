@@ -1,8 +1,6 @@
-name: Build Resume
+name: Build main.tex
 
-on:
-  push:
-    branches: [ build ]
+on: push
 
 jobs:
   build:
