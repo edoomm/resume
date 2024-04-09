@@ -11,16 +11,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4  # Checkout your code
 
-      - name: Cache Latex Dependencies
+      - name: Cache texlive
         uses: actions/cache@v4
+        id: cache-texlive
         with:
-          path: ~/.local/texlive  # Cache Latex installation directory
-          key: ${{ runner.os }}-texlive-${{ hashFiles('**/package-list.txt') }}  # Cache key with hash
-          restore-keys: |   # Fallback cache keys
-            ${{ runner.os }}-texlive-
+            path: "~/texlive"
 
-      - name: Install Dependencies (if cache miss)
-        run: sudo apt update && sudo apt install -y texlive-full  # Installs Latex
+      - name: Install texlive
+        env:
+          CACHE_HIT: ${{steps.cache-texlive.outputs.cache-hit}}
+        run: |
+            if [[ "$CACHE_HIT" == 'true' ]]; then
+              sudo cp --verbose --force --recursive ~/texlive/* /
+            else
+              sudo apt update && sudo apt install --yes texlive-full
+              mkdir -p ~/texlive
+              sudo dpkg -L texlive | while IFS= read -r f; do if test -f $f; then echo $f; fi; done | xargs cp --parents --target-directory ~/texlive/
+            fi
+
+      # - name: Install Dependencies (if cache miss)
+      #   run: sudo apt update && sudo apt install -y texlive-full  # Installs Latex
 
       - name: Build Resume
         run: pdflatex main.tex && mv main.pdf resume.pdf
