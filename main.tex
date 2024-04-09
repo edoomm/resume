@@ -1,0 +1,277 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% \usepackage{multicol}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\setlength{\footskip}{5pt} % removes footskip warning
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Eduardo} \Large Mendoza&
+  \href{mailto:edumendozamz@gmail.com}{\underline{edumendozamz@gmail.com}}\\
+  \href{https://github.com/edoomm/}{\underline{github.com/edoomm}} $|$
+  \href{https://www.linkedin.com/in/eduardomen/}{\underline{linkedin.com/in/eduardomen}}& 
+  \href{https://t.me/edooardom}{\underline{+52 (561) 984 9863}} $|$
+  \href{https://api.whatsapp.com/send/?phone=4915753518714&text&type=phone_number&app_absent=0}
+  {\underline{(+49) 1575 3518714}}\\
+\end{tabular*}
+
+% \textbf{\Huge \scshape Eduardo Mendoza} \\ \vspace{1pt}
+% \small 123-456-7890 $|$ \href{mailto:x@x.com}{\underline{jake@su.edu}} $|$ 
+% \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/jake}} $|$
+% \href{https://github.com/...}{\underline{github.com/jake}}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineer Intern}{February 2023 -- July 2023}
+      {Audi AG}{Ingolstadt, Germany}
+      \resumeItemListStart
+        \resumeItem{Worked on a project focused on adaptive learning for the future self-driving car users.}
+        \resumeItem{Implemented Python modules to enable change of car settings (LEDs, seat positions, HMI layouts,
+        BT comm.).}
+        \resumeItem{Ran, tested and improved scripts directly on a car, which enabled faster deliverables and quality
+        assurance.}
+        \resumeItem{Championed best Python (documentation, code style) and Git practices that gave the project a solid
+        structure.}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \resumeSubheading
+      {Software Developer}{April 2022 -- July 2022}
+      {Quad}{Sussex, USA}
+      \resumeItemListStart
+        \resumeItem{Developed back end (services, APIs, tests) in C\#, front end in JS (react, jQuery, ajax) and database
+        management through Oracle and Mongo databases.}
+        \resumeItem{Belonged to a scrum IT team that gave more control over printing scheduling information to business
+        users innovating processes, which resulted in a significant impact on the firm.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Engineer Intern}{August 2018 -- January 2022}
+      {ENCB - IPN}{Mexico City}
+      \resumeItemListStart
+        \resumeItem{Directed a react native project that helped rural communities evaluate aquatic ecosystems with
+        interactive and user-friendly forms that performed evaluations and gave insights about the health of these
+        ecosystems.}
+        \resumeItem{Created a web page that compiled years of investigation and data used for laboratory
+        experimentation.}
+        \resumeItem{Facilitated a C\# desktop app that managed information and provided features to manage the web page.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {ESCOM - IPN -- Computer Systems Engineering (90 GPA)}
+      {Mexico City}
+      {Specialized in Software Development and currently finishing final bachelor project.}
+      {Graduating in december 2024}
+    \resumeSubheading
+      {University of Göttingen -- Applied Computer Science (2.1 GPA)}
+      {Göttingen, Germany}
+      {Exchange program where I studied topics related to AI and Data Science.}
+      {October 2022 -- September 2023}
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects \& Leadership}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Trajectory Similarity Measures} $|$
+          \emph{Python, Jupyter, Cython, C++, Git/Github}}
+          {February 2024 -- Present}
+          \resumeItemListStart
+            \resumeItem{Developing a Python and C++ library for geometrical computation that will enable querying
+            similar trajectories based on geospatial data of thousands of mobile devices.}
+            \resumeItem{Evaluating best Python/C++ integration using libraries like cppyy, ctypes and cython.}
+            \resumeItem{Implementing different algorithms and benchmarking with state-of-the-art solutions.}
+            \resumeItem{Integrating Github Actions for building, testing and deployment of tests libraries to Read The
+            Docs and PyPI.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{AIESEC - Mexico / Belgium \& Austria} --
+          \emph{Team Leader / Team Member}}{February 2021 -- July 2022}
+          \resumeItemListStart
+            \resumeItem{Reached +1k volunteers and interns to take an opportunity abroad, leading us to be top \#1 in
+            Mexico’s office.}
+            \resumeItem{Managed teams of around 10 members to direct the first stage of the sales funnel process and
+            carry sales meetings.}
+            \resumeItem{Collaborated with people from other countries to receive foreign interns and even created IT
+            projects.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{SARA (Warehouse Management System)} $|$
+          \emph{Java, PHP, JS, SQL}}
+          {September 2020 -- January 2021}
+          \resumeItemListStart
+            \resumeItem{Led a team of 8 classmates with a scrum organization to develop an Android and a Web
+            application.}
+            \resumeItem{Optimized picking process, using camera APIs and interactive screens that improved warehouse
+            processes.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+% %
+% %----------- SKILLS-----------
+
+% \section{Skills}\vspace{-12pt}
+% \begin{multicols*}{3}
+%     \textbf{Programming languages}
+%     \resumeItemListStart
+%         \resumeItem{Python \& C\# (+2 years)}
+%         \resumeItem{Java \& JS (1.5 years)}
+%         \resumeItem{C/C++ \& PHP (1 year)}
+%     \resumeItemListEnd
+%     \columnbreak
+
+%     \textbf{Other technologies}\\
+%     MySQL, MongoDB, Bash, React, Hadoop, Hive, Pytorch, G Suite, GAS, Neovim, Adobe suite.
+%     \columnbreak
+
+%     \textbf{Languages}\vspace{-4pt}
+%     \resumeItemListStart
+%         \resumeItem{English (C1)}
+%         \resumeItem{German (B2)}
+%         \resumeItem{Portuguese (B1)}
+%         \resumeItem{Spanish (native)}
+%     \resumeItemListEnd
+    
+% \end{multicols*}
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming languages}{: Python \& C\# (+2 years), Java \& JS (1.5 years), C/C++ \& PHP (1 year).} \\
+     \textbf{Other technologies}{: JQuery, Ajax, MySQL, MongoDB, Bash, Docker, React, Hadoop, Hive, Pytorch,
+     Matplotlib, Bootstrap, G Suite, Google Apps Scripts, Neovim, Linux (Arch \& Debian), Git/Github, Adobe suite.} \\
+     \textbf{Languages}{: English (C1), German (B2), Portuguese (B1), Spanish (native).}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
