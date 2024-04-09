@@ -2,7 +2,7 @@ name: Build Resume
 
 on:
   push:
-    branches: [ build ]  # You can trigger on specific branches
+    branches: [ build ]
 
 jobs:
   build:
