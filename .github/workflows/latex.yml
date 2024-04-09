@@ -16,6 +16,7 @@ jobs:
         id: cache-texlive
         with:
             path: "~/texlive"
+            key: "1.0"
 
       - name: Install texlive
         env:
