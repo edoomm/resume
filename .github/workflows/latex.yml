@@ -1,6 +1,8 @@
 name: Build main.tex
 
-on: push
+on:
+  push:
+    branches: [ build ]
 
 jobs:
   build:
@@ -16,7 +18,7 @@ jobs:
         run: pdflatex main.tex
 
       - name: Upload Resume
-        uses: actions/upload-artifact@v3  # Uploads generated PDF as artifact
+        uses: actions/upload-artifact@v4  # Uploads generated PDF as artifact
         with:
           name: resume.pdf
-          path: resume.pdf
+          path: ./resume.pdf
