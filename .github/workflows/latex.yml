@@ -9,13 +9,27 @@ jobs:
     runs-on: ubuntu-latest  # You can choose a different runner OS
 
     steps:
-      - uses: actions/checkout@v3  # Checkout your code
+      - uses: actions/checkout@v4  # Checkout your code
 
-      - name: Install dependencies (if any)
+      - name: Cache Latex Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/texlive  # Cache Latex installation directory
+          key: ${{ runner.os }}-texlive-${{ hashFiles('**/package-list.txt') }}  # Cache key with hash
+          restore-keys: |   # Fallback cache keys
+            ${{ runner.os }}-texlive-
+
+      - name: Install Dependencies (if cache miss)
         run: sudo apt update && sudo apt install -y texlive-full  # Installs Latex
 
       - name: Build Resume
         run: pdflatex main.tex
+
+      - name: List directory contents (debug)
+        run: ls -lA
+
+      - name: Print working directory (debug)
+        run: pwd
 
       - name: Upload Resume
         uses: actions/upload-artifact@v4  # Uploads generated PDF as artifact
