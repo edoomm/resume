@@ -15,8 +15,8 @@ jobs:
       - name: Build Resume
         run: pdflatex main.tex && mv main.pdf resume.pdf
 
-      - name: Upload Resume
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/actions/upload-pages-artifact@v3
         with:
           name: github-pages
           path: ./
