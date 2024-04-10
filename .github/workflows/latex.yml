@@ -11,25 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4  # Checkout your code
 
-      - name: Create cache directory (if needed)
-        run: mkdir -p ~/.local/texlive
-
-      - name: Cache Latex Dependencies
-        uses: actions/cache@v4  # Use cache action
-        with:
-          path: ~/.local/texlive  # Cache Latex installation directory
-          key: ${{ runner.os }}-texlive-${{ hashFiles('**/package-list.txt') }}  # Cache key with hash
-          restore-keys: |   # Fallback cache keys
-            ${{ runner.os }}-texlive-
-
-      - name: Install Dependencies (if cache miss)
-        run: sudo apt update && sudo apt install -y texlive-full  # Only install if cache miss
+      - name: Install texlive-full
+        run: sudo apt update && sudo apt install -y texlive-full
 
       - name: Build Resume
         run: pdflatex main.tex && mv main.pdf resume.pdf
-
-      - name: List directory contents (debug)
-        run: ls -lA
 
       - name: Upload Resume
         uses: actions/upload-artifact@v4  # Uploads generated PDF as artifact
