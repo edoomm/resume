@@ -1,4 +1,4 @@
-name: Build and deploy main.tex
+name: Build and deploy LaTeX resume
 
 on: push
 
@@ -15,7 +15,7 @@ jobs:
       - name: Build Resume
         run: pdflatex main.tex && mv main.pdf resume.pdf
 
-      - name: Upload artifact
+      - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
